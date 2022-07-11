@@ -33,6 +33,7 @@ export const SmallLoader = styled.div`
 	align-items: center;
 	font-size: 13px;
 	gap: 10px;
+	justify-content: center;
 `;
 export const ActionButtonContainer = styled.nav`
 	display: flex;
@@ -45,11 +46,11 @@ export const ActionButtonContainer = styled.nav`
 `;
 
 export const SubmitButton = styled.button`
-	border: 1px solid #9c27b0;
+	border: 1px solid #01579b;
     height: 35px;
     border-radius: 4px;
     width: 100%;
-    background: #9c27b0;
+    background: #01579b;
     color: #fff;
     font-size: 11px;
     cursor: pointer;

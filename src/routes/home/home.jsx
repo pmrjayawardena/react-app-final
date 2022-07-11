@@ -85,7 +85,7 @@ export const Home = () => {
 			setLoading(false);
 		} catch (error) {
 			setLoading(false);
-			Toast('something went wrong');
+			Toast('Something went wrong');
 		}
 	};
 	useEffect(() => {
@@ -111,7 +111,8 @@ export const Home = () => {
 		}
 
 		dispatch(setUsersData(filteredUsers));
-		Toast(`user ${user.first_name} ${user.last_name} deleted`);
+		Toast(`User ${user.first_name} ${user.last_name} deleted`);
+		navigate('/');
 		await deleteUser(user);
 	};
 

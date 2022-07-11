@@ -164,7 +164,7 @@ export const EditUser = () => {
 				limit={1}
 			/>
 			<UserCardContainer>
-				<h3>UPDATE USER</h3>
+				<h3 style={{ color: '#1976d2' }}>UPDATE USER</h3>
 				<Card sx={{ maxWidth: 345 }}>
 					<CardActionArea>
 						<CardMedia
@@ -215,7 +215,7 @@ export const EditUser = () => {
 							>
 								{updating ? (
 									<SmallLoader>
-										<Loader size={20} /> Updating..
+										<Loader size={20} />
 									</SmallLoader>
 								) : (
 									'UPDATE'
@@ -224,72 +224,6 @@ export const EditUser = () => {
 							<p className='errorClass'>{handleErrors()}</p>
 						</Stack>
 					</form>
-					{/* <form onSubmit={handleFormSubmit}>
-						<Stack direction='column' spacing={4} alignItems='center'>
-							<TextField
-								label='Firstname'
-								color='primary'
-								focused
-								placeholder='Firstname'
-								value={firstName}
-								inputProps={ariaLabel}
-								onChange={handleInputChange}
-								size='small'
-								required
-							/>
-
-							<TextField
-								label='Lastname'
-								color='primary'
-								focused
-								placeholder='Lastname'
-								value={lastName}
-								inputProps={ariaLabel}
-								onChange={handleInputChangeLastName}
-								size='small'
-								required
-							/>
-
-							<TextField
-								label='Email'
-								color='primary'
-								focused
-								placeholder='Email'
-								value={email}
-								inputProps={ariaLabel}
-								onChange={handleInputChangeEmail}
-								size='small'
-								required
-							/>
-						</Stack>
-						<ActionButtonContainer>
-							<Link to={`/`}>
-								<CustomButton
-									color='primary'
-									variant='contained'
-									disableElevation
-									size='small'
-								>
-									Go back
-								</CustomButton>
-							</Link>
-							<SubmitButton
-								variant='contained'
-								size='small'
-								type='submit'
-								disableElevation
-								className='submit-btn'
-							>
-								{updating ? (
-									<SmallLoader>
-										<Loader size={20} /> Updating..
-									</SmallLoader>
-								) : (
-									'UPDATE'
-								)}
-							</SubmitButton>
-						</ActionButtonContainer>
-					</form> */}
 				</FormContainer>
 			</UserCardContainer>
 		</>

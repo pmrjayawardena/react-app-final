@@ -9,7 +9,7 @@ export const UserContainer = styled.nav`
 export const ActionButtonContainer = styled.nav`
 	display: flex;
 	gap: 10px;
-	justify-content: flex-end;
+	justify-content: start;
 	a {
 		text-decoration: none;
 	}
@@ -19,7 +19,13 @@ export const SearchBoxContainer = styled.nav`
 	display: flex;
 	justify-content: flex-end;
 	margin: 2rem 0;
-	gap: 20px;
+	gap: 10px;
 	align-items: center;
 	flex-wrap: wrap;
+`;
+
+export const ArrowIcons = styled.div`
+	display: 'flex';
+	alignitems: 'center';
+	justifycontent: 'start';
 `;

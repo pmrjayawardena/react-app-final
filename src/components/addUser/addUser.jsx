@@ -67,6 +67,9 @@ export const AddUser = () => {
 		navigate('/');
 	};
 
+	const handleNavigation = () => {
+		navigate('/');
+	};
 	const handleErrors = () => {
 		if (Object.keys(errors).length !== 0) {
 			if (errors.Firstname && errors.Firstname.type == 'required') {
@@ -107,9 +110,6 @@ export const AddUser = () => {
 			/>
 			<UserCardContainer>
 				<Stack direction='row' spacing={2} alignItems='center'>
-					<Avatar sx={{ bgcolor: deepOrange[500] }} variant='square'>
-						N
-					</Avatar>
 					<h3 style={{ color: '#1976d2' }}> ADD NEW USER</h3>
 				</Stack>
 				<FormContainer>
@@ -148,79 +148,24 @@ export const AddUser = () => {
 							>
 								{adding ? (
 									<SmallLoader>
-										<Loader size={20} /> Adding..
+										<Loader size={20} />
 									</SmallLoader>
 								) : (
 									'ADD'
 								)}
 							</SubmitButton>
-							<p className='errorClass'>{handleErrors()}</p>
-							<div></div>
-						</Stack>
-					</form>
-					{/* <Stack direction='column' spacing={4} alignItems='center'>
-							<TextField
-								label='Firstname'
-								color='primary'
-								focused
-								placeholder='Firstname'
-								value={firstName}
-								inputProps={ariaLabel}
-								onChange={handleInputChange}
-								size='small'
-								required
-							/>
-
-							<TextField
-								label='Lastname'
-								color='primary'
-								focused
-								placeholder='Lastname'
-								value={lastName}
-								inputProps={ariaLabel}
-								onChange={handleInputChangeLastName}
-								size='small'
-								required
-							/>
-
-							<TextField
-								label='Email'
-								color='primary'
-								focused
-								placeholder='Email'
-								value={email}
-								inputProps={ariaLabel}
-								onChange={handleInputChangeEmail}
-								size='small'
-								required
-							/>
-						</Stack> */}
-					{/* <ActionButtonContainer>
-							<Link to={`/`}>
-								<CustomButton
-									color='primary'
-									variant='contained'
-									disableElevation
-									size='small'
-								>
-									Go back
-								</CustomButton>
-							</Link>
 							<SubmitButton
 								variant='outlined'
 								size='medium'
 								type='submit'
 								className='submit-btn'
+								onClick={handleNavigation}
 							>
-								{adding ? (
-									<SmallLoader>
-										<Loader size={20} /> Adding..
-									</SmallLoader>
-								) : (
-									'ADD'
-								)}
+								GO BACK
 							</SubmitButton>
-						</ActionButtonContainer> */}
+							<p className='errorClass'>{handleErrors()}</p>
+						</Stack>
+					</form>
 				</FormContainer>
 			</UserCardContainer>
 		</>

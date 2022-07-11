@@ -5,6 +5,7 @@ export const PaginateContainer = styled.nav`
 	margin: auto;
 	display: flex;
 	margin-top: 20px;
+	user-select: none;
 `;
 
 export const PageItemList = styled.li`

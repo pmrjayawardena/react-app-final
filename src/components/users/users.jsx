@@ -17,7 +17,12 @@ import { tableCellClasses } from '@mui/material/TableCell';
 import { Link, useNavigate, createSearchParams, useSearchParams } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import { ToastContainer } from 'react-toastify';
-import { UserContainer, SearchBoxContainer, ActionButtonContainer } from './userStyle';
+import {
+	UserContainer,
+	SearchBoxContainer,
+	ActionButtonContainer,
+	ArrowIcons,
+} from './userStyle';
 import { NoResults } from '../noResults/noResults';
 import { CustomButton } from '../UI/button/button';
 import { SingleUser } from '../singleUser/singleUser';
@@ -148,7 +153,7 @@ const Users = ({ users, deleteUser, handleSort }) => {
 					<CustomButton
 						variant='contained'
 						disableElevation
-						size='small'
+						size='large'
 						color='primary'
 					>
 						Add user
@@ -159,7 +164,7 @@ const Users = ({ users, deleteUser, handleSort }) => {
 					focused
 					id='outlined-search'
 					label='Search'
-					placeholder='Search by firstName,lastName and email'
+					placeholder='Search by Firstname,Lastname and Email'
 					type='search'
 					onChange={(e) => handleSetSearch(e)}
 					size='small'
@@ -172,7 +177,7 @@ const Users = ({ users, deleteUser, handleSort }) => {
 						<TableRow>
 							<StyledTableCell>ID</StyledTableCell>
 							<StyledTableCell
-								align='right'
+								align='left'
 								onClick={() => changeArrows('first_name')}
 								style={{
 									cursor: 'pointer',
@@ -182,19 +187,23 @@ const Users = ({ users, deleteUser, handleSort }) => {
 									style={{
 										display: 'flex',
 										alignItems: 'center',
-										justifyContent: 'flex-end',
+										justifyContent: 'start',
 									}}
 								>
-									{!arrowFirstName ? (
-										<ArrowDropUp />
-									) : (
-										<ArrowDropDown />
-									)}
 									Firstname
+									{fieldName == 'first_name' ? (
+										!arrowFirstName && sortType == 'desc' ? (
+											<ArrowDropUp />
+										) : (
+											<ArrowDropDown />
+										)
+									) : (
+										''
+									)}
 								</div>
 							</StyledTableCell>
 							<StyledTableCell
-								align='right'
+								align='left'
 								onClick={() => changeArrows('last_name')}
 								style={{ cursor: 'pointer' }}
 							>
@@ -202,15 +211,23 @@ const Users = ({ users, deleteUser, handleSort }) => {
 									style={{
 										display: 'flex',
 										alignItems: 'center',
-										justifyContent: 'flex-end',
+										justifyContent: 'start',
 									}}
 								>
-									{!arrowLastName ? <ArrowDropUp /> : <ArrowDropDown />}
 									Lastname
+									{fieldName == 'last_name' ? (
+										!arrowLastName && sortType == 'desc' ? (
+											<ArrowDropUp />
+										) : (
+											<ArrowDropDown />
+										)
+									) : (
+										''
+									)}
 								</div>
 							</StyledTableCell>
 							<StyledTableCell
-								align='right'
+								align='left'
 								onClick={() => changeArrows('email')}
 								style={{ cursor: 'pointer' }}
 							>
@@ -218,14 +235,22 @@ const Users = ({ users, deleteUser, handleSort }) => {
 									style={{
 										display: 'flex',
 										alignItems: 'center',
-										justifyContent: 'flex-end',
+										justifyContent: 'start',
 									}}
 								>
-									{!arrowEmail ? <ArrowDropUp /> : <ArrowDropDown />}
-									Email
+									Emai
+									{fieldName == 'email' ? (
+										!arrowEmail && sortType == 'desc' ? (
+											<ArrowDropUp />
+										) : (
+											<ArrowDropDown />
+										)
+									) : (
+										''
+									)}
 								</div>
 							</StyledTableCell>
-							<StyledTableCell align='center'>Actions</StyledTableCell>
+							<StyledTableCell align='left'>Actions</StyledTableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -245,15 +270,15 @@ const Users = ({ users, deleteUser, handleSort }) => {
 										},
 									}}
 								>
-									<TableCell component='th' scope='row' align='right'>
+									<TableCell component='th' scope='row' align='left'>
 										{user.id}
 									</TableCell>
-									<TableCell align='right'>{user.first_name}</TableCell>
-									<TableCell align='right'>{user.last_name}</TableCell>
-									<TableCell align='right'>
+									<TableCell align='left'>{user.first_name}</TableCell>
+									<TableCell align='left'>{user.last_name}</TableCell>
+									<TableCell align='left'>
 										<a href={`mailto:${user.email}`}>{user.email}</a>
 									</TableCell>
-									<TableCell align='center'>
+									<TableCell align='left'>
 										<ActionButtonContainer>
 											<CustomButton
 												color='info'

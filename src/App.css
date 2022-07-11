@@ -5,3 +5,12 @@
 li {
 	list-style: none;
 }
+
+#outlined-search {
+	font-size: 14px;
+	height: 20px;
+}
+
+#outlined-search::placeholder {
+	font-size: 13px;
+}
